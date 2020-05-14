@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BookStoreApi.Contracts;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
 namespace BookStoreApi.Controllers
@@ -10,6 +11,11 @@ namespace BookStoreApi.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
+        private readonly ILoggerService _logger;
+        public HomeController(ILoggerService logger)
+        {
+            _logger = logger;
+        }
         /// <summary>
         /// This is a get verb controller
         /// </summary>
@@ -18,6 +24,7 @@ namespace BookStoreApi.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
+            _logger.LogInfo("This is a warning!");
             return new string[] { "value1", "value2" };
         }
         /// <summary>
