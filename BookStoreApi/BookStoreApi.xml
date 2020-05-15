@@ -44,6 +44,11 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="T:BookStoreApi.Controllers.BooksController">
+            <summary>
+            interact with the Book table
+            </summary>
+        </member>
         <member name="T:BookStoreApi.Controllers.HomeController">
             <summary>
             This is a scaffolding controller
