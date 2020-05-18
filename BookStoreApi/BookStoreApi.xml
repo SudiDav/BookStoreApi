@@ -49,6 +49,26 @@
             interact with the Book table
             </summary>
         </member>
+        <member name="M:BookStoreApi.Controllers.BooksController.GetBooks">
+            <summary>
+            Get All Books
+            </summary>
+            <returns>A List of Books</returns>
+        </member>
+        <member name="M:BookStoreApi.Controllers.BooksController.GetBook(System.Int32)">
+            <summary>
+            Get book by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookStoreApi.Controllers.BooksController.Create(BookStoreApi.DTOs.BookCreateDTO)">
+            <summary>
+            This an endpoint to create a book
+            </summary>
+            <param name="bookCreate"></param>
+            <returns></returns>
+        </member>
         <member name="T:BookStoreApi.Controllers.HomeController">
             <summary>
             This is a scaffolding controller
@@ -65,6 +85,13 @@
             This is a get endpoint by id.
             </summary>
             <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookStoreApi.Controllers.UsersController.Login(BookStoreApi.DTOs.UserDTO)">
+            <summary>
+            User Login endpoint
+            </summary>
+            <param name="userDTO"></param>
             <returns></returns>
         </member>
     </members>

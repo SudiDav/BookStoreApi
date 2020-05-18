@@ -2,6 +2,7 @@
 using BookStoreApi.Contracts;
 using BookStoreApi.DTOs;
 using BookStoreApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -15,6 +16,7 @@ namespace BookStoreApi.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public class AuthorsController : ControllerBase
     {
@@ -36,6 +38,7 @@ namespace BookStoreApi.Controllers
         /// <returns>List of Authors</returns>
 
         [HttpGet]
+        [AllowAnonymous]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetAuthors()
@@ -59,6 +62,7 @@ namespace BookStoreApi.Controllers
         /// <returns></returns>
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -87,30 +91,33 @@ namespace BookStoreApi.Controllers
         /// <param name="authorCreate"></param>
         /// <returns></returns>
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Create([FromBody] AuthorCreateDTO authorCreate)
         {
+            var location = GetControllerActionNames();
             try
             {
-                _logger.LogWarn("Author Submission attempt!");
+                _logger.LogInfo($"{ location }: Create Attempted");
                 if (authorCreate == null)
                 {
+                    _logger.LogWarn($"{location}: Empty request was submitted!");
                     return BadRequest(ModelState);
                 }
                 if (!ModelState.IsValid)
                 {
-                    _logger.LogWarn("Author Data was incomplete");
+                    _logger.LogWarn($"{location}: Data was incomplte");
                     return BadRequest();
                 }
                 var author = _mapper.Map<Author>(authorCreate);
                 var isSuccess = await _author.Create(author);
                 if (!isSuccess)
                 {
-                    return InternalError($"Author Creation failed!");
+                    return InternalError(($"{location} - Creation failed!"));
                 }
-                _logger.LogInfo("Author create Successfully!");
+                _logger.LogInfo($"{location}: create Successfully!");
                 return Created("Create", new { author });
             }
             catch (Exception ex)
@@ -119,7 +126,6 @@ namespace BookStoreApi.Controllers
             }
         }
 
-
         /// <summary>
         /// Update an author
         /// </summary>
@@ -127,6 +133,7 @@ namespace BookStoreApi.Controllers
         /// <param name="authorUpdate"></param>
         /// <returns></returns>
         [HttpPut("{id}")]
+        [Authorize(Roles = "Administrator")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -170,14 +177,16 @@ namespace BookStoreApi.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrator")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Delete(int id)
         {
+            var location = GetControllerActionNames();
             try
             {
-                _logger.LogWarn($"Attempt to author with id:{id}!");
+                _logger.LogWarn($"{location}: Attempted with id:{id}!");
                 if (id < 1)
                 {
                     return BadRequest();
@@ -186,7 +195,7 @@ namespace BookStoreApi.Controllers
                 var isExists = await _author.IsExists(id);
                 if (!isExists)
                 {
-                    _logger.LogInfo($"The author with id:{id} was not found!");
+                    _logger.LogInfo($"{location}: record with id:{id} was not found!");
                     return NotFound();
                 }
 
@@ -197,13 +206,20 @@ namespace BookStoreApi.Controllers
                 {
                     return InternalError("Delete operation Failed!");
                 }
-                _logger.LogWarn($"Author with the id:{id} successfully Deleted!");
+                _logger.LogWarn($"{location}: record with the id:{id} was successfully Deleted!");
                 return NoContent();
             }
             catch (Exception ex)
             {
                 return InternalError(($"{ex.Message} - {ex.InnerException}"));
             }
+        }
+        private string GetControllerActionNames()
+        {
+            var controller = ControllerContext.ActionDescriptor.ControllerName;
+            var action = ControllerContext.ActionDescriptor.ActionName;
+
+            return $"{controller} - {action}";
         }
         private ObjectResult InternalError(string message)
         {
