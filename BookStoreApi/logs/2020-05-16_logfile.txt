@@ -1,0 +1,51 @@
+2020-05-16 17:07:54.1919 INFO Books - GetBooks: Attempted Call
+2020-05-16 17:08:06.5761 ERROR Books - GetBooks: Unable to cast object of type 'System.Decimal' to type 'System.Double'. - 
+2020-05-16 17:15:08.1045 INFO Books - GetBooks: Attempted Call
+2020-05-16 17:15:08.3599 ERROR Books - GetBooks: Unable to cast object of type 'System.Decimal' to type 'System.Double'. - 
+2020-05-16 17:22:54.2820 INFO Books - Delete: Delete Attempted on record with id: 2 
+2020-05-16 17:22:55.7663 ERROR Books - Delete: Unable to cast object of type 'System.Decimal' to type 'System.Double'. - 
+2020-05-16 17:28:00.2174 INFO Books - GetBooks: Attempted Call
+2020-05-16 17:28:01.3429 ERROR Books - GetBooks: Unable to cast object of type 'System.Decimal' to type 'System.Double'. - 
+2020-05-16 17:29:23.9379 INFO Books - GetBooks: Attempted Call
+2020-05-16 17:29:25.9948 ERROR Books - GetBooks: Unable to cast object of type 'System.Decimal' to type 'System.Double'. - 
+2020-05-16 17:32:18.1993 INFO Books - GetBooks: Attempted Call
+2020-05-16 17:32:21.1293 INFO Books - GetBooks: Successful
+2020-05-16 17:34:40.5982 INFO Successfully Got all Authors!
+2020-05-16 17:35:49.1317 INFO Books - Create: Create Attempted
+2020-05-16 17:35:49.9297 INFO Books - Create: Creation was Successful!
+2020-05-16 17:36:04.6240 INFO Books - GetBooks: Attempted Call
+2020-05-16 17:36:04.7438 ERROR Books - GetBooks: Unable to cast object of type 'System.Decimal' to type 'System.Double'. - 
+2020-05-16 17:37:38.5816 INFO Books - GetBooks: Attempted Call
+2020-05-16 17:37:41.1048 INFO Books - GetBooks: Successful
+2020-05-16 17:41:22.5822 INFO Books - Create: Create Attempted
+2020-05-16 17:41:22.5822 INFO Books - Create: Create Attempted
+2020-05-16 17:41:25.3645 INFO Books - Create: Creation was Successful!
+2020-05-16 17:41:25.3645 INFO Books - Create: Creation was Successful!
+2020-05-16 17:44:51.3989 INFO Books - GetBooks: Attempted Call
+2020-05-16 17:44:54.9290 INFO Books - GetBooks: Successful
+2020-05-16 20:43:54.9712 INFO Users - Login: Login Attempt from user user@example.com 
+2020-05-16 20:43:55.2166 INFO Users - Login: user@example.com Not Authenticated
+2020-05-16 20:45:37.0589 INFO Users - Login: Login Attempt from user admin@bookstore.com 
+2020-05-16 20:45:37.1157 INFO Users - Login: admin@bookstore.com Not Authenticated
+2020-05-16 20:47:27.3344 INFO Users - Login: Login Attempt from user admin@bookstore.com 
+2020-05-16 20:47:27.3773 INFO Users - Login: admin@bookstore.com Not Authenticated
+2020-05-16 20:54:20.3643 INFO Users - Login: Login Attempt from user Admin 
+2020-05-16 20:54:21.1394 INFO Users - Login: Admin Successfully Authenticated
+2020-05-16 20:55:19.5696 INFO Users - Login: Login Attempt from user admin 
+2020-05-16 20:55:19.6483 INFO Users - Login: admin Successfully Authenticated
+2020-05-16 20:57:00.3940 INFO Users - Login: Login Attempt from user Customer1 
+2020-05-16 20:57:00.5179 INFO Users - Login: Customer1 Successfully Authenticated
+2020-05-16 20:57:30.8531 INFO Users - Login: Login Attempt from user Customer1 
+2020-05-16 20:57:30.9628 INFO Users - Login: Customer1 Successfully Authenticated
+2020-05-16 21:34:13.9546 INFO Users - Login: Login Attempt from user Customer1 
+2020-05-16 21:34:14.4882 INFO Users - Login: Customer1 Successfully Authenticated
+2020-05-16 21:34:14.5160 INFO Users - Login: Generating Token
+2020-05-16 21:34:14.5768 ERROR Users - Login: Object reference not set to an instance of an object. - 
+2020-05-16 21:34:27.5131 INFO Users - Login: Login Attempt from user admin 
+2020-05-16 21:34:27.6006 INFO Users - Login: admin Successfully Authenticated
+2020-05-16 21:34:27.7558 INFO Users - Login: Generating Token
+2020-05-16 21:34:27.7877 ERROR Users - Login: Object reference not set to an instance of an object. - 
+2020-05-16 21:37:38.7001 INFO Users - Login: Login Attempt from user Admin 
+2020-05-16 21:37:52.5283 INFO Users - Login: Admin Successfully Authenticated
+2020-05-16 21:38:11.0338 INFO Users - Login: Generating Token
+2020-05-16 21:39:41.8067 ERROR Users - Login: Object reference not set to an instance of an object. - 

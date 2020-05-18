@@ -1,0 +1,23 @@
+2020-05-18 13:03:47.4139 INFO Users - Login: Login Attempt from user admin 
+2020-05-18 13:03:48.4134 INFO Users - Login: admin Successfully Authenticated
+2020-05-18 13:03:48.4548 INFO Users - Login: Generating Token
+2020-05-18 13:03:48.5078 ERROR Users - Login: Object reference not set to an instance of an object. - 
+2020-05-18 13:05:29.0686 INFO Users - Login: Login Attempt from user admin 
+2020-05-18 13:05:29.1560 INFO Users - Login: admin Successfully Authenticated
+2020-05-18 13:05:29.1906 INFO Users - Login: Generating Token
+2020-05-18 13:05:29.2131 ERROR Users - Login: Object reference not set to an instance of an object. - 
+2020-05-18 13:10:17.2087 INFO Users - Login: Login Attempt from user Admin 
+2020-05-18 13:10:55.9398 INFO Users - Login: Admin Successfully Authenticated
+2020-05-18 13:11:01.0569 INFO Users - Login: Generating Token
+2020-05-18 13:20:45.4185 INFO Users - Login: Login Attempt from user Admin 
+2020-05-18 13:20:49.5907 INFO Users - Login: Admin Successfully Authenticated
+2020-05-18 13:20:53.9753 INFO Users - Login: Generating Token
+2020-05-18 14:36:56.7383 INFO Successfully Got all Authors!
+2020-05-18 14:37:45.7197 INFO Successfully Got all Authors!
+2020-05-18 14:44:03.4051 INFO Users - Login: Login Attempt from user Admin 
+2020-05-18 14:44:03.7017 INFO Users - Login: Admin Successfully Authenticated
+2020-05-18 14:44:03.7260 INFO Users - Login: Generating Token
+2020-05-18 14:44:36.1425 INFO Authors - Create: Create Attempted
+2020-05-18 14:44:36.5906 INFO Authors - Create: create Successfully!
+2020-05-18 14:45:16.6942 INFO Authors - Create: Create Attempted
+2020-05-18 14:45:16.7432 INFO Authors - Create: create Successfully!
