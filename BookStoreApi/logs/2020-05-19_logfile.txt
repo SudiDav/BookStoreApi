@@ -1,0 +1,10 @@
+2020-05-19 14:49:52.2342 INFO Users - Register: Registration Attempt for sudisimbadav@gmail.com 
+2020-05-19 14:49:52.2342 INFO Users - Register: Registration Attempt for sudisimbadav@gmail.com 
+2020-05-19 14:50:57.3715 ERROR Users - Register: PasswordRequiresDigit Passwords must have at least one digit ('0'-'9').
+2020-05-19 14:50:57.3715 ERROR Users - Register: PasswordRequiresDigit Passwords must have at least one digit ('0'-'9').
+2020-05-19 14:50:57.3901 ERROR Users - Register: sudisimbadav@gmail.com User Registration Attempt Failed
+2020-05-19 14:50:57.3818 ERROR Users - Register: sudisimbadav@gmail.com User Registration Attempt Failed
+2020-05-19 15:17:46.9404 INFO Users - Register: Registration Attempt for sudi@gmail.com 
+2020-05-19 15:19:12.5252 INFO Successfully Got all Authors!
+2020-05-19 15:19:24.3438 INFO Successfully Got all Authors!
+2020-05-19 15:19:57.0495 INFO Successfully Got all Authors!
